@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 
+
 // Fetch a single workout by ID
 router.get('/:id', async (req, res) => {
     try {
@@ -23,6 +24,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
 
 
 // Add a new workout
@@ -37,6 +39,7 @@ router.post('/', async (req, res) => {
 });
 
 
+
 // Update a workout by ID
 router.put('/:id', async (req, res) => {
     try {
@@ -48,6 +51,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+
 // Delete a workout by ID
 router.delete('/:id', async (req, res) => {
     try {
@@ -58,5 +62,6 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
 
 module.exports = router;

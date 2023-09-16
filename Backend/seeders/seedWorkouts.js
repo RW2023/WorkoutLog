@@ -1,11 +1,15 @@
+
 const mongoose = require('mongoose');
 const Workout = require('../models/Workout');
 
+
 //connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect('mongodb://127.0.0.1:27017/WorkoutTracker', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
+
+
 
 //create seed data
 const seedData = [

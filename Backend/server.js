@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+require('colors');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -13,26 +15,26 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true
 })
     .then(() => {
-        console.log('MongoDB connected successfully');
+        console.log('MongoDB connected successfully'.green);
     })
     .catch(err => {
-        console.error(`MongoDB connection error: ${err}`);
+        console.error(`MongoDB connection error: ${err}`.red);
     });
 
 // Connection Events
 const db = mongoose.connection;
 
 db.on('connected', () => {
-    console.log('Now we are cooking with gas!')
-    console.log('Mongoose default connection is UP');
+    console.log('We are up back here!'.bgYellow.black)
+    console.log('Mongoose default connection is UP'.green);
 });
 
 db.on('error', (err) => {
-    console.error(`Mongoose default connection has occurred ${err} error`);
+    console.error(`Mongoose default connection has occurred ${err} error`.red);
 });
 
 db.on('disconnected', () => {
-    console.log('Mongoose default connection is disconnected');
+    console.log('Mongoose default connection is disconnected'.red);
 });
 
 app.get('/', (req, res) => {
@@ -40,8 +42,8 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('The Data Flows Through You!');
-    console.log(`Author: ${process.env.DEV}`);
-    console.log(`Server running on http://localhost:${PORT}`);
+ 
+    console.log(`Developer: ${process.env.DEV}`.bgYellow.black);
+    console.log(`Server running on http://localhost:${PORT}`.green);
 });
 

@@ -23,7 +23,8 @@ mongoose.connect(process.env.MONGO_URI, {
 const db = mongoose.connection;
 
 db.on('connected', () => {
-    console.log('Mongoose default connection is open');
+    console.log('Now we are cooking with gas!')
+    console.log('Mongoose default connection is UP');
 });
 
 db.on('error', (err) => {
@@ -35,7 +36,7 @@ db.on('disconnected', () => {
 });
 
 app.get('/', (req, res) => {
-    res.send('Hello, Workout Tracker!');
+    res.send('YO YO!, Workout Tracker is Serving!');
 });
 
 app.listen(PORT, () => {

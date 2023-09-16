@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const workoutRoutes = require('./routes/workoutRoutes');
 require('colors');
 
 const app = express();
+// Mount the workout routes
+app.use('/api/workouts', workoutRoutes);
+
 const PORT = process.env.PORT || 5000;
 
 // Load environment variables

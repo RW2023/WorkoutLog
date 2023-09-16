@@ -13,6 +13,9 @@ const app = express();
 app.use('/api/workouts', workoutRoutes);
 
 
+// Use the workout routes
+app.use('/workouts', workoutRoutes);
+
 
 
 

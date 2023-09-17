@@ -19,15 +19,17 @@ const GlobalStyles = createGlobalStyle`
   --darkBackground: #fdfffc;
 }
 
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--paragraph);
   
-  body {
-    background: var(--background);
-    color: var(--stroke);
-    margin: 0;
-    padding: 0;
-    font-family: var(--mainFont);
-    text-align: center;
-  }
+}
 `;
 
 export default GlobalStyles;

@@ -15,6 +15,7 @@ const DashboardHeader = styled.h1`
   color: var(--secondary);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
+  text-align: center;
 `;
 
 const DashboardContent = styled.div`
